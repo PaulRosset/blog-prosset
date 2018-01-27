@@ -1,0 +1,9 @@
+.schools {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.school {
+    height: 4em;
+}

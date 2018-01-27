@@ -10,14 +10,20 @@ let make = (~name, _children) => {
                 <img className="profile" src="http://via.placeholder.com/150x150"/>
                 <h3>{ReasonReact.stringToElement(name)}</h3>
                 <div className="resume">
-                    <p>{ReasonReact.stringToElement("Student developer, functional programing lover")}</p>
-                    <a href="polo" className="icon twitter">
+                    <p className="resume-profile">
+                        {ReasonReact.stringToElement("Student developer, Functional programming lover.")}
+                        <br/>
+                        {ReasonReact.stringToElement("Passionate about building things and share it.")}
+                        <br/>
+                        {ReasonReact.stringToElement("Thirsty of knowledge.")}
+                    </p>
+                    <a href="https://www.twitter.com/RossetPaul" className="icon twitter">
                         <i className="fa fa-twitter"/>
                     </a>
-                    <a href="polo" className="icon linkedin">
+                    <a href="https://www.linkedin.com/profile/view?id=AAIAABbpRe0B3A_Cmy2Ry3-cpt8i2AW51nCSLlo&amp;trk=nav_responsive_tab_profile_pic" className="icon linkedin">
                         <i className="fa fa-linkedin"/>
                     </a>
-                    <a href="polo" className="icon github">
+                    <a href="https://github.com/PaulRosset" className="icon github">
                         <i className="fa fa-github"/>
                     </a>
                 </div>

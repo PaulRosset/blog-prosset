@@ -1,1 +1,1 @@
-src/app.cmj : src/Header.cmj
+src/app.cmj : src/Body.cmj src/Header.cmj

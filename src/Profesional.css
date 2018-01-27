@@ -1,0 +1,42 @@
+.entreprise {
+    height: 4em;
+    cursor: pointer;
+}
+
+.profesional {
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text {
+    display: inline-block;
+    width: 100%;
+}
+
+.company {
+    display: flex;
+    align-items: flex-end;
+}
+
+.date {
+    position: absolute;
+    background: #f7f7f7;
+    border: 1px solid grey;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: .3em;
+    margin-top: 5px;
+}
+
+.first {
+    bottom: auto;
+}
+
+.second {
+    bottom: auto;
+}
+
+.third {
+    bottom: auto;
+}

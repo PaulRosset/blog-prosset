@@ -1,0 +1,23 @@
+.footer {
+    margin-top: 2em;
+}
+
+.quote {
+    letter-spacing: 2px;
+}
+
+.country {
+    height: 30px;
+    margin-top: 5px;
+}
+
+.developed {
+    float: right;
+    font-size: 12px;
+}
+
+.reason {
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}

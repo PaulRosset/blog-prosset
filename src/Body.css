@@ -1,0 +1,18 @@
+.body {
+    
+}
+
+.sub-title {
+    display: inline-block;
+    float: left;
+}
+
+.text {
+    text-align: left;
+    display: inline-block;
+    margin-top: 0;
+}
+
+.parts {
+    border-bottom: 2px solid #D3D3D3;
+}

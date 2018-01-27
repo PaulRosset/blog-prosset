@@ -1,11 +1,11 @@
 bs_package_flags = -bs-package-name reason-scripts
-src_root_dir = /home/polo/Documents/Reason/my-app
+src_root_dir = /home/polo/Documents/Reason/my-app/blog-prosset
 bsc = /home/polo/.npm-global/lib/node_modules/bs-platform/lib/bsc.exe
 bsdep = /home/polo/.npm-global/lib/node_modules/bs-platform/lib/bsb_helper.exe
 warnings = -w -30-40+6+7+27+32..39+44+45+101
-bsc_flags = -nostdlib -I '/home/polo/Documents/Reason/my-app/node_modules/bs-platform/lib/ocaml' -bs-super-errors -no-alias-deps -color always
+bsc_flags = -nostdlib -I '/home/polo/Documents/Reason/my-app/blog-prosset/node_modules/bs-platform/lib/ocaml' -bs-super-errors -no-alias-deps -color always
 ppx_flags = 
-bs_package_includes = -I /home/polo/Documents/Reason/my-app/node_modules/reason-react/lib/ocaml -I /home/polo/Documents/Reason/my-app/node_modules/bs-jest/lib/ocaml
+bs_package_includes = -I /home/polo/Documents/Reason/my-app/blog-prosset/node_modules/reason-react/lib/ocaml -I /home/polo/Documents/Reason/my-app/blog-prosset/node_modules/bs-jest/lib/ocaml
 bs_package_dev_includes = 
 namespace = 
 bsb_dir_group = 0
@@ -28,9 +28,24 @@ rule build_cmj_cmi
 build src/app.cmj |  $src_root_dir/lib/js/src/app.js src/app.cmi : build_cmj_cmi src/app.mlast
   bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
   bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/src
+build src/Edu.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/Edu.re
+build src/Edu.mlast.d : build_deps src/Edu.mlast
+build src/Edu.cmj |  $src_root_dir/lib/js/src/Edu.js src/Edu.cmi : build_cmj_cmi src/Edu.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/src
+build src/Body.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/Body.re
+build src/Body.mlast.d : build_deps src/Body.mlast
+build src/Body.cmj |  $src_root_dir/lib/js/src/Body.js src/Body.cmi : build_cmj_cmi src/Body.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/src
 build src/index.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/index.re
 build src/index.mlast.d : build_deps src/index.mlast
 build src/index.cmj |  $src_root_dir/lib/js/src/index.js src/index.cmi : build_cmj_cmi src/index.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/src
+build src/Footer.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/Footer.re
+build src/Footer.mlast.d : build_deps src/Footer.mlast
+build src/Footer.cmj |  $src_root_dir/lib/js/src/Footer.js src/Footer.cmi : build_cmj_cmi src/Footer.mlast
   bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
   bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/src
 build src/Header.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/Header.re
@@ -43,4 +58,9 @@ build src/app_test.mlast.d : build_deps src/app_test.mlast
 build src/app_test.cmj |  $src_root_dir/lib/js/src/app_test.js src/app_test.cmi : build_cmj_cmi src/app_test.mlast
   bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
   bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/src
-build build.ninja : phony  ||  src/app_test.mlast.d src/Header.mlast.d src/index.mlast.d src/app.mlast.d
+build src/Profesional.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/Profesional.re
+build src/Profesional.mlast.d : build_deps src/Profesional.mlast
+build src/Profesional.cmj |  $src_root_dir/lib/js/src/Profesional.js src/Profesional.cmi : build_cmj_cmi src/Profesional.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/src
+build build.ninja : phony  ||  src/Profesional.mlast.d src/app_test.mlast.d src/Header.mlast.d src/Footer.mlast.d src/index.mlast.d src/Body.mlast.d src/Edu.mlast.d src/app.mlast.d
