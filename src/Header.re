@@ -1,5 +1,7 @@
 [%bs.raw {|require('./Header.css')|}];
 
+[@bs.module] external paul : string = "./paul.jpg";
+
 let component = ReasonReact.statelessComponent("Header");
 
 let make = (~name, _children) => {
@@ -7,11 +9,11 @@ let make = (~name, _children) => {
     render: _shelf => 
         <header>
             <div className="container">
-                <img className="profile" src="http://via.placeholder.com/150x150"/>
+                <img className="profile" src={paul}/>
                 <h3>{ReasonReact.stringToElement(name)}</h3>
                 <div className="resume">
                     <p className="resume-profile">
-                        {ReasonReact.stringToElement("Student developer, Functional programming lover.")}
+                        {ReasonReact.stringToElement("Student, Developer, Functional programming lover.")}
                         <br/>
                         {ReasonReact.stringToElement("Passionate about building things and share it.")}
                         <br/>
@@ -25,6 +27,9 @@ let make = (~name, _children) => {
                     </a>
                     <a href="https://github.com/PaulRosset" className="icon github">
                         <i className="fa fa-github"/>
+                    </a>
+                    <a href="mailto:paulrosset96@gmail.com" className="icon email">
+                        <i className="fa fa-envelope"/>
                     </a>
                 </div>
             </div>
